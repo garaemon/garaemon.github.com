@@ -1,0 +1,15 @@
+# Site settings
+title: garaemon.github.io
+email: garaemon@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  garaemon's blog. Talking about robotics and software.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://garaemon.github.io" # the base hostname & protocol for your site
+twitter_username: garaemon_coder
+github_username:  garaemon
+
+# Build settings
+highlighter: pygments # this is how you put pygments config in jekyll 2.0 instead of pygments: true
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]

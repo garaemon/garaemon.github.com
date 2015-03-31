@@ -1,0 +1,76 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+$highlight-color: rgb(0, 126, 229);
+$font-family-sans-serif: "Open Sans", sans-serif;
+$navbar-default-bg: #fff;
+$navbar-height: 100px;
+$navbar-default-brand-color: $highlight-color;
+@import "bootstrap/stylesheets/bootstrap-sprockets";
+@import "bootstrap/stylesheets/bootstrap";
+
+$link-color: $gray-dark;
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+h2.post-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.post-meta {
+    color: $gray-light;
+}
+
+a.post-link {
+    color: $gray-dark;
+    font-weight: 300;
+    font-family: $font-family-sans-serif;
+    &:hover {
+        text-decoration: none;
+        color: $highlight-color;
+    }
+}
+
+ul.post-list {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+li.post {
+}
+
+article.post-content {
+    padding-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    @include center-block;
+}
+
+footer {
+    border-top: solid 2px $navbar-default-border;
+    padding-top: 20px;
+    margin-top: 20px;
+    a {
+        color: $gray-dark;
+        font-weight: 300;
+        font-family: $font-family-sans-serif;
+        &:hover {
+            text-decoration: none;
+            color: $highlight-color;
+        }
+
+    }
+}
+
+.middle-icon {
+    width: 50px;
+    display: inline-block;
+}
