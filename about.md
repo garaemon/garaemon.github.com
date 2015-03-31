@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-{% img img-circle http://www.gravatar.com/avatar/2496d65c608c090ef54e53d9a2f27806.png  garaemon%}
+![garaemon](http://www.gravatar.com/avatar/2496d65c608c090ef54e53d9a2f27806.png)
 
 * Name: Ryohei Ueda
 * Birth: 1986/02/03
