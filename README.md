@@ -1,7 +1,6 @@
 # setup
 ```sh
-pip install pygments
-gem install jekyll pygments.rb kramdown
+gem install jekyll rouge kramdown
 ```
 
 # run
