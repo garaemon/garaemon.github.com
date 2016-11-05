@@ -11,3 +11,11 @@ github_username:  garaemon
 # Build settings
 highlighter: rouge
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+paginate: 5
+paginate_path: "page:num"
+gems:
+  - jekyll-archives
+  - jekyll-paginate

@@ -1,30 +1,35 @@
 ---
 layout: default
 ---
-<div class="container">
-  <div class="row">
-    <div class="home">
-      <div class="col-md-8 col-md-offset-2">
-        <ul class="post-list">
-          {% for post in site.posts %}
-          <li class="post">
 
-            <h2 class="text-center post-header">
-              <a class="post-link"
-                 href="{{ post.url | prepend: site.baseurl }}">
-                {{ post.title }}
-              </a>
-            </h2>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <article class="post-content">
-              {{ post.content }}
-            </article>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
+<div class="card-wrapper">
+    <!-- loop with jekyll-paginate -->
+    {% for post in paginator.posts %}
 
-    </div>
-  </div>
+    <paper-card class="custom">
+        <div class="card-content">
+            <div class="title">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </div>
+            <div class="subtitle">{{ post.date | date: '%Y %B %-d' }}</div>
+            {{ post.excerpt }}
+        </div>
+        <div class="card-actions">
+            <a href="{{ site.baseurl }}{{ post.url }}"><paper-button>Read More</paper-button></a>
+        </div>
+    </paper-card>
+
+    {% endfor %}
+
 </div>
+
+<!-- pagination -->
+{% if paginator.total_pages > 1 %}
+<my-pager total_pages="{{ paginator.total_pages }}"
+          active_page="{{ paginator.page }}"
+          previous_page="{{ paginator.previous_page_path | replace: 'index.html', '/' | prepend: site.baseurl | replace: '//', '/' }}"
+          next_page="{{ paginator.next_page_path | replace: 'index.html', '/' | prepend: site.baseurl | replace: '//', '/' }}"
+          base_url="{{ site.paginate_path | prepend: '/' | prepend: site.baseurl | replace: ':num', '' | replace: '//', '/' }}"
+          top_url="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">
+</my-pager>
+{% endif %}
