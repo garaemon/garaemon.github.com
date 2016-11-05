@@ -1,0 +1,150 @@
+<link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- pager element -->
+<dom-module id="my-pager">
+    <style>
+     /* centerize ul */
+     ul {
+         text-align: center;
+         padding: 0;
+         margin: 24px 0 36px 0;
+     }
+
+     li {
+         list-style: none;
+         display: inline-block;
+         height: 30px;
+         width: 30px;
+         border-radius: 2px;
+     }
+
+     .disabled {
+         color: var(--disabled-text-color);
+     }
+
+     li a {
+         color: var(--paper-grey-800);
+         text-decoration: none;
+     }
+
+     li a.current {
+         color: var(--accent-color);
+     }
+
+     li a iron-icon {
+         color: var(--paper-grey-800);
+     }
+    </style>
+
+    <template>
+        <ul>
+            <!-- if pages are [1, 2, 3, 4, 5] and active page is 1,
+                 - total-pages = 5
+                 - page-indices = [1, 2, 3, 4, 5]
+                 - active-page = 1
+               -->
+            <!-- left arrow -->
+            <template is="dom-if" if="{{ previous_page }}">
+                <li>
+                    <a href="{{ previous_page }}">
+                        <iron-icon icon="chevron-left"></iron-icon>
+                    </a>
+                </li>
+            </template>
+            <template is="dom-if" if="{{ !previous_page }}">
+                <li>
+                    <iron-icon class="disabled" icon="chevron-left"></iron-icon>
+                </li>
+            </template>
+            <template is="dom-repeat" items="{{ page_indices }}">
+                <li>
+                    <!-- cannot use sentence in if attribute like
+                         {{ item == active_page}}.
+                         So we need to add wrapper function _isPageActive.
+                       -->
+                    <template is="dom-if" if="{{ !_isPageActive(item) }}">
+                        <!-- There is not /page1 url. We need to use
+                             top url for the first page.
+                           -->
+                        <template is="dom-if" if="{{ !_isFirstPage(item) }}">
+                            <a href="{{ base_url }}{{ item }}">
+                                {{ item }}
+                            </a>
+                        </template>
+                        <template is="dom-if" if="{{ _isFirstPage(item) }}">
+                            <a href="{{ top_url }}">
+                                {{ item }}
+                            </a>
+                        </template>
+                    </template>
+                    <template is="dom-if" if="{{ _isPageActive(item) }}">
+                        <a href="#!" class="current">
+                            {{ item }}
+                        </a>
+                    </template>
+                </li>
+            </template>
+            <!-- right arrow -->
+            <template is="dom-if" if="{{ next_page }}">
+                <li>
+                    <a href="{{ next_page }}">
+                        <iron-icon icon="chevron-right"></iron-icon>
+                    </a>
+                </li>
+            </template>
+            <template is="dom-if" if="{{ !next_page }}">
+                <li>
+                    <iron-icon class="disabled" icon="chevron-right"></iron-icon>
+                </li>
+            </template>
+        </ul>
+    </template>
+
+    <script>
+     Polymer({
+         is: "my-pager",
+         properties: {
+             total_pages: {
+                 type: Number,
+                 value: 0
+             },
+             active_page: {
+                 type: Number,
+                 value: 0
+             },
+             previoius_page: {
+                 type: String,
+                 value: ""
+             },
+             next_page: {
+                 type: String,
+                 value: ""
+             },
+             base_url: {
+                 type: String,
+                 value: ""
+             },
+             top_url: {
+                 type: String,
+                 value: ""
+             }
+         },
+         ready: function() {
+             console.log(this.base_url);
+             /* generate index list and set it to this.page-indices. */
+             var page_indices = [];
+             for (var i = 0; i < this.total_pages; i++) {
+                 page_indices.push(i + 1);
+             }
+             this.page_indices = page_indices;
+         },
+         _isPageActive: function(page) {
+             return page == this.active_page;
+         },
+         _isFirstPage: function(page) {
+             return page == 1;
+         }
+     });
+    </script>
+</dom-module>

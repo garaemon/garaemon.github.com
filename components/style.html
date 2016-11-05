@@ -1,0 +1,119 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+
+
+<style is="custom-style">
+
+ /* Application theme using :root */
+ :root {
+     --content-width: 700px;
+     --primary-text-color: #212121;
+     --primary-background-color: #f5f5f5;
+     --secondary-text-color: #727272;
+     --disabled-text-color: #bdbdbd;
+     --divider-color: #E0E0E0;
+     --primary-color: var(--paper-blue-500);
+     --light-primary-color: #CFD8DC;
+     --dark-primary-color: #D32F2F;
+     --accent-color: #FF5722;
+     --light-accent-color: #ff80ab;
+     --dark-accent-color: #f50057;
+     /* CUSTOM */
+     --code-text-color: #607D8B;
+     /* Components */
+     /* paper-drawer-panel */
+     --drawer-menu-color: #ffffff;
+     --drawer-border-color: 1px solid #ccc;
+     --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
+     /* paper-menu */
+     --paper-menu-background-color: #fff;
+     --menu-link-color: #111111;
+ }
+
+ /* html, body {
+    height: 100%;
+    } */
+
+ body {
+     background-color: var(--primary-background-color);
+     color: var(--primary-text-color);
+     @apply(--paper-font-body1);
+     padding: 0px;
+     margin: 0px;
+ }
+
+ paper-toolbar {
+     color: white;
+     --paper-header-panel-shadow: {
+         height: 6px;
+         bottom: -6px;
+         box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
+     };
+ }
+
+ .title-wrapper {
+     width: var(--content-width);
+     padding: 0;
+     position: relative;
+     margin: 16px auto;
+ }
+
+ a {
+     color: var(--accent-color);
+     text-decoration: none;
+ }
+
+ a.aboutme-link {
+     color: white;
+ }
+
+ div.title a {
+     color: var(--primary-color);
+ }
+
+ .card-wrapper {
+     width: var(--content-width);
+     max-width: calc(100% - 32px);
+     padding: 0;
+     position: relative;
+     margin: 16px auto;
+ }
+
+ paper-card.custom {
+     width: 100%;
+     background: #ffffff;
+     margin-bottom: 16px;
+     /* Make all images in header 16:9 */
+     --paper-card-header-image: {
+         height: 0;
+         padding-bottom: 56.25%;
+     }
+ }
+ paper-card.custom .title {
+     @apply(--paper-font-headline);
+     margin-top: 8px;
+     margin-bottom: 16px;
+ }
+ paper-card.custom .subtitle {
+     @apply(--paper-font-body1);
+     color: var(--secondary-text-color, #727272);
+     margin: -8px 0 16px 0;
+ }
+ paper-card .card-content *:last-child {
+     margin-bottom: 8px;
+ }
+ img {
+     max-width: 100%;
+ }
+ footer {
+     width: var(--content-width);
+     padding: 0;
+     position: relative;
+     margin: 16px auto;
+     text-align: center;
+ }
+  </style>

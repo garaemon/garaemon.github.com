@@ -1,21 +1,18 @@
 ---
 layout: default
 ---
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="post">
 
-        <h2 class="text-center post-header">
-          <a class="post-link"
-             href="{{ page.url | prepend: site.baseurl }}">
-            {{ page.title }}
-          </a>
-        </h2>
-        <article class="post-content">
-          {{ content }}
-        </article>
-      </div>
-    </div>
-  </div>
+<div class="card-wrapper">
+    <paper-card class="custom">
+        <div class="card-content">
+            <div class="title">
+                <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+            </div>
+            <div class="subtitle">{{ page.date | date: '%Y %B %-d' }}</div>
+            {{ content }}
+        </div>
+        <div class="card-actions">
+            <a href="javascript:history.back()"><paper-button>Go Back</paper-button></a>
+        </div>
+    </paper-card>
 </div>

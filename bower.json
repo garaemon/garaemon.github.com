@@ -1,0 +1,19 @@
+{
+  "name": "garaemon.github.io",
+  "homepage": "https://github.com/garaemon/garaemon.github.io",
+  "authors": [
+    "Ryohei Ueda <garaemon@gmail.com>"
+  ],
+  "description": "github.io page for @garaemon",
+  "main": "",
+  "keywords": [
+    "blog"
+  ],
+  "license": "BSD",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.4",
+    "fontawesome-iconset": "diego-d5000/fontawesome-iconset#~4.3.0",
+    "iron-elements": "polymerelements/iron-elements#^1.0.8",
+    "paper-elements": "polymerelements/paper-elements#^1.0.7"
+  }
+}

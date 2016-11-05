@@ -1,10 +1,16 @@
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
+<paper-header-panel class="flex">
+  <paper-toolbar>
+    <div class="title-wrapper">
+      <span class="title">
+        {{ site.title }}
+      </span>
+      <a href="/about" class="aboutme-link">
+        <paper-icon-button icon="account-circle" class="aboutme-link style-scope">
+        </paper-icon-button>
+        about me
+      </a>
+      <!-- <iron-icon icon="icons:account-circle" class="account-link"> -->
+      <!-- </iron-icon> -->
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/about">About me</a></li>
-    </ul>
-  </div>
-</nav>
+  </paper-toolbar>
+</paper-header-panel>
