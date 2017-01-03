@@ -4,7 +4,7 @@ title:  "tmuxの新しいwindowを現在のディレクトリにする"
 date: 2016-10-30T11:30:0JST
 description:
 categories:
-- [blog]
+- blog
 ---
 
 tmuxで新しいwindowを作ったときにシェルのディレクトリがホームディレクトリになる場合、

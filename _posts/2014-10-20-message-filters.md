@@ -4,7 +4,8 @@ title:  timestampとmessage_filters
 date: 2014-10-19T16:09:46Z
 description:
 categories:
-- [blog, ros]
+- blog
+- ros
 ---
 
 「非同期にモジュールが走るから複数のCPUコアが有効に扱える」と言うけれども、

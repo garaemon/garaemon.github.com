@@ -4,7 +4,8 @@ title:  "percolでROSのデバッグをしやすくする"
 date: 2015-01-27T0:0:0JST
 description:
 categories:
-- [blog, ros]
+- blog
+- ros
 ---
 以前に[rostopicとpercolを使うと良い](/blog/ros/2014/10/19/rostopic-percol)という記事を書きましたが、
 さらにもう一歩進めてみると大変便利。

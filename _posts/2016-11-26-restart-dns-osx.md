@@ -4,7 +4,7 @@ title: restart-dns-osx
 date: 2016-11-26T16:42:58JST
 descriptions:
 categories:
-- [blog]
+- blog
 ---
 
 macでDNSのキャッシュが更新されていないとき、以下のコマンドを打つことでキャッシュを更新することができる。

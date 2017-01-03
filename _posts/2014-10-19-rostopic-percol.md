@@ -4,7 +4,8 @@ title:  rostopic+percol
 date: 2014-10-18T16:59:48Z
 description:
 categories:
-- [blog, ros]
+- blog
+- ros
 ---
 
 rostopicと[percol](https://github.com/mooz/percol)を組み合わせると便利。

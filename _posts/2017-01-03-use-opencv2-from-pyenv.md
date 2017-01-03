@@ -4,7 +4,7 @@ title: macでopencvをpyenvでインストールしたpythonから使う
 date: 2017-01-03T14:12:40JST
 descriptions:
 categories:
-- [blog]
+- blog
 ---
 
 opencvをhomebrewでインストールする.
