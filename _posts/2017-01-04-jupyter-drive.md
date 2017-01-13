@@ -16,6 +16,11 @@ $ python -m jupyterdrive
 ```
 
 jupyterdriveが有効になっている間, google drive上のファイルしかjupyterから参照できない.
+ローカルとgoogle driveを同時に参照したい場合は、`--mixed`をつけてjupyterdriveを有効にする必要がある.
+```sh
+$ python -m jupyterdrive --mixed
+```
+
 
 jupyterdriveを無効にするには
 
