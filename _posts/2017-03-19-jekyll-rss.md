@@ -16,7 +16,7 @@ jekyllでRSSを追加するのは実はかんたん. RSSもテンプレートと
 RSSを`${base_url}/feed.xml`として提供するなら、トップディレクトリに`feed.xml`という内容を
 [このように](https://github.com/garaemon/garaemon.github.io/blob/master/feed.xml)しておけばいい.
 
-さらに、各ページの`<head>`部分に以下のような
+さらに、各ページの`<head>`部分に以下のような一行を入れておけば良い.
 
 ```html
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml" />
